@@ -1,5 +1,3 @@
-import CountDownController from "./CountDownController"
-
 export class Game extends Phaser.Scene
 {
     
