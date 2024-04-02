@@ -9,7 +9,7 @@ import { Preloader } from './Preloader.js';
 const config = {
     type: Phaser.AUTO,
     width: 1024,
-    height: 768,
+    height: 1024,
     parent: 'game-container',
     backgroundColor: '#FFFFFF',
     scale: {
