@@ -3,9 +3,6 @@ export default class CountdownController
 	/** @type {Phaser.Scene} */
 	scene
 
-	/** @type {Phaser.number} */
-	secondsRemain
-
 	/** @type {Phaser.Time.TimerEvent} */
 	timerEvent
 
@@ -16,10 +13,8 @@ export default class CountdownController
 	 * @param {Phaser.Scene} scene 	
 	 */
 	constructor(scene)
-	{
-		var secondsRemain = 0
-		this.scene = scene	
-		this.secondsRemain = secondsRemain
+	{		 
+		this.scene = scene			 
 	}
 
 	/**
@@ -61,13 +56,13 @@ export default class CountdownController
 	{
 		if (!this.timerEvent || this.duration <= 0)
 		{
-			secondsRemain = 0;
+			 
 			return;
 		}
 
 		const elapsed = this.timerEvent.getElapsed();
 		const remaining = this.duration - elapsed;
 		const seconds = remaining / 1000;
-		secondsRemain = seconds;
+		 
 	}
 }
