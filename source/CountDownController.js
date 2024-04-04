@@ -4,7 +4,7 @@ export default class CountdownController
 	scene
 
 	/** @type {Phaser.number} */
-	var secondsRemain
+	secondsRemain
 
 	/** @type {Phaser.Time.TimerEvent} */
 	timerEvent
@@ -18,7 +18,7 @@ export default class CountdownController
 	constructor(scene)
 	{
 		this.scene = scene	
-		this.secondsRemain = 0
+		this.secondsRemain = secondsRemain
 	}
 
 	/**
