@@ -69,6 +69,6 @@ export default class CountdownController
 		const remaining = this.duration - elapsed;
 		const seconds = remaining / 1000;
 		this.secondsRemain = seconds.toFixed(2);
-		this.percentRemain = this.secondsRemain / this.duration
+		this.percentRemain = (this.secondsRemain / this.duration).toFixed(0);
 	}
 }
