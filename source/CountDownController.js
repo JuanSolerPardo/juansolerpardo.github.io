@@ -3,8 +3,8 @@ export default class CountdownController
 	/** @type {Phaser.Scene} */
 	scene
 
-	/** @type {Phaser.GameObjects.Text} */
-	label
+	/** @type {Phaser.number} */
+	secondsRemain
 
 	/** @type {Phaser.Time.TimerEvent} */
 	timerEvent
@@ -13,13 +13,11 @@ export default class CountdownController
 
 	/**
 	 * 
-	 * @param {Phaser.Scene} scene 
-	 * @param {Phaser.GameObjects.Text} label 
+	 * @param {Phaser.Scene} scene 	
 	 */
-	constructor(scene, label)
+	constructor(scene)
 	{
-		this.scene = scene
-		this.label = label
+		this.scene = scene		 
 	}
 
 	/**
@@ -61,13 +59,13 @@ export default class CountdownController
 	{
 		if (!this.timerEvent || this.duration <= 0)
 		{
-			return
+			secondsRemain = 0;
+			return;
 		}
 
-		const elapsed = this.timerEvent.getElapsed()
-		const remaining = this.duration - elapsed
-		const seconds = remaining / 1000
-
-		this.label.text = seconds.toFixed(2)
+		const elapsed = this.timerEvent.getElapsed();
+		const remaining = this.duration - elapsed;
+		const seconds = remaining / 1000;
+		secondsRemain = Seconds;
 	}
 }
