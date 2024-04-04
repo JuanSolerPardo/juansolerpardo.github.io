@@ -2,7 +2,10 @@ export default class CountdownController
 {
 	/** @type {Phaser.Scene} */
 	scene
-
+        
+	/** @type {Phaser.number} */
+	secondsRemain
+	
 	/** @type {Phaser.Time.TimerEvent} */
 	timerEvent
 
@@ -14,7 +17,8 @@ export default class CountdownController
 	 */
 	constructor(scene)
 	{		 
-		this.scene = scene			 
+		this.scene = scene	
+		this.secondsRemain = 0
 	}
 
 	/**
@@ -31,8 +35,8 @@ export default class CountdownController
 		this.timerEvent = this.scene.time.addEvent({
 			delay: duration,
 			callback: () => {
-				this.label.text = '0'
-
+				 
+				this.secondsRemain = 0
 				this.stop()
 				
 				if (callback)
@@ -63,6 +67,7 @@ export default class CountdownController
 		const elapsed = this.timerEvent.getElapsed();
 		const remaining = this.duration - elapsed;
 		const seconds = remaining / 1000;
+		this.secondsRemain = seconds;
 		 
 	}
 }
