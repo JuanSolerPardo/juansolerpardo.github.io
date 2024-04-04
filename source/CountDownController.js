@@ -5,6 +5,7 @@ export default class CountdownController
         
 	/** @type {Phaser.number} */
 	secondsRemain
+	percentRemain
 	
 	/** @type {Phaser.Time.TimerEvent} */
 	timerEvent
@@ -19,6 +20,7 @@ export default class CountdownController
 	{		 
 		this.scene = scene	
 		this.secondsRemain = 0
+		this.percentRemain = 0
 	}
 
 	/**
@@ -59,15 +61,14 @@ export default class CountdownController
 	update()
 	{
 		if (!this.timerEvent || this.duration <= 0)
-		{
-			 
+		{			 
 			return;
 		}
 
 		const elapsed = this.timerEvent.getElapsed();
 		const remaining = this.duration - elapsed;
 		const seconds = remaining / 1000;
-		this.secondsRemain = seconds;
-		 
+		this.secondsRemain = seconds.toFixed(2);
+		this.percentRemain = this.secondsRemain / this.duration
 	}
 }
