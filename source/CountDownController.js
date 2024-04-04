@@ -4,7 +4,7 @@ export default class CountdownController
 	scene
 
 	/** @type {Phaser.number} */
-	secondsRemain
+	var secondsRemain
 
 	/** @type {Phaser.Time.TimerEvent} */
 	timerEvent
