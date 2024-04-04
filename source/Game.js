@@ -29,7 +29,7 @@ export class Game extends Phaser.Scene
         
         const lbCronometro = this.add.text(700,50,'0',{fontSize: '55px'}).setOrigin(0.5);
         
-        this.cronometro = new CountDownController(this, lbCronometro);
+        this.cronometro = new CountDownController(this);
         this.cronometro.start(this.handleCountDownFinished.bind(this));
         
         this.greenCircleTimer = this.time.addEvent({
@@ -60,6 +60,7 @@ export class Game extends Phaser.Scene
    update(){
    
         this.cronometro.update();
+        lbCronometro.text = cronometro.secondsRemain;
    
    }
 
