@@ -60,7 +60,7 @@ export class Game extends Phaser.Scene
    update(){
    
         this.cronometro.update();
-        lbCronometro.text = cronometro.seconds;
+        this.lbCronometro.text = cronometro.seconds;
    
    }
 
