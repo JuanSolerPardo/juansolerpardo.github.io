@@ -17,6 +17,7 @@ export default class CountdownController
 	 */
 	constructor(scene)
 	{
+		var secondsRemain = 0
 		this.scene = scene	
 		this.secondsRemain = secondsRemain
 	}
