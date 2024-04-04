@@ -28,6 +28,7 @@ export class Game extends Phaser.Scene
         this.positionImages = this.createPositionImages();
         
         this.lbCronometro = this.add.text(700,50,'0',{fontSize: '55px'}).setOrigin(0.5);
+        this.lbCronometro2 = this.add.text(700,50,'0',{fontSize: '55px'}).setOrigin(0.9);
         
         this.cronometro = new CountDownController(this);
         this.cronometro.start(this.handleCountDownFinished.bind(this));
@@ -61,6 +62,7 @@ export class Game extends Phaser.Scene
    
         this.cronometro.update();
         this.lbCronometro.text = this.cronometro.secondsRemain;
+        this.lbCronometro2.text = this.cronometro.percentRemain;
    
    }
 
