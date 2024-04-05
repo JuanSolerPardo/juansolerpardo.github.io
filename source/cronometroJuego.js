@@ -58,6 +58,10 @@ update()
 	
 	this.graphics.lineStyle(this.lineThick, this.lineColor, 1);
 	
-	this.esfera.draw(this.graphics, 64);
+	
+            this.graphics.beginPath();           
+            this.graphics.arc(this.xPosition, this.yPosition, this.radius, Phaser.Math.DegToRad(0), Phaser.Math.DegToRad(270), false);
+            this.graphics.strokePath();
+	
 }
 }
