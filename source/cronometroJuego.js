@@ -24,8 +24,8 @@ export default class cronometroJuego
 	 */
 	constructor(scene)
 	{		 
-    this.graphics = this.add.graphics();    
-		this.scene = scene	
+    this.scene = scene	
+    this.graphics = this.scene.add.graphics();        
     this.xPosition = 400 
     this.yPosition = 300
     this.radius = 260
