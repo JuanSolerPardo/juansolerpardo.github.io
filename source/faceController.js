@@ -38,7 +38,7 @@ export default class faceController
 	
 	handleCountDownFinished()
 	{
-	  this.destroy()	   
+	  this.position.destroy();	   
 	}
 
 	
