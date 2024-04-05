@@ -36,7 +36,7 @@ export default class faceController
 		this.position = this.scene.add.image(this.position.x, this.position.y -10, this.face).setOrigin(0.5);
 		this.position.setDisplaySize(30, 30);
       		this.position.setInteractive();
-      		this.position.on('pointerdown', this.update());
+      		this.position.on('pointerdown', this.sumaalgo());
 	}
 	
 	update()
@@ -59,6 +59,6 @@ export default class faceController
 	   this.stop();
 	}
 
-	
+	sumaalgo(){}
 	
 }
