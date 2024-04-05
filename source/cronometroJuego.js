@@ -5,7 +5,8 @@ export default class cronometroJuego
 esfera
 /** @type {Phaser.Scene} */
 scene
-
+/** @param {Phaser.Graphics} */
+  graphics;
 /** @param {number} xPosition */
 xPosition
 
