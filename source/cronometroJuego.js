@@ -28,7 +28,7 @@ lineColor
 /** 
 * @param {Phaser.Scene} scene 	
 */
-constructor(scene, duracion = 45000)
+constructor(scene)
 {		 
 	this.scene = scene	
 	this.reloj = this.scene.add.graphics();  
@@ -39,9 +39,9 @@ constructor(scene, duracion = 45000)
 	this.lineColor = 0x08D017
 	this.lineThick = 15	
 	
-	this.cronometro = new CountDownController(scene);
+	this.cronometro = new CountDownController(this);
        
-        this.cronometro.start(this.handleCountDownFinished.bind(this));
+      
 
 
 }
@@ -50,10 +50,10 @@ constructor(scene, duracion = 45000)
 * @param {() => void} callback
 * @param {number} duration 
 */
-start()
+start(callback, duracion = 45000)
 {
 	this.stop();
-	this.cronometro(
+	this.cronometro.start(this.handleCountDownFinished.bind(this), duracion);
 	this.sombraReloj.clear();
 	this.sombraReloj.lineStyle(this.lineThick, 0xD9EAD3, 1);	       
         this.sombraReloj.arc(this.xPosition, this.yPosition, this.radius, Phaser.Math.DegToRad(0), Phaser.Math.DegToRad(360), false);
