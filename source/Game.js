@@ -28,7 +28,7 @@ export class Game extends Phaser.Scene
         { x: 130, y: 350 },    
         { x: 320, y: 350 },
         { x: 515, y: 350 },
-        { x: 700, y: 355 },
+        { x: 700, y: 350 },
         { x: 200, y: 523 },    
         { x: 400, y: 523 },
         { x: 600, y: 523 },
