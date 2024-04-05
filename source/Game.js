@@ -80,6 +80,7 @@ export class Game extends Phaser.Scene
        this.randomImage = Phaser.Math.RND.pick(this.imagesToDisplay);
        this.randomPositionImage = Phaser.Math.RND.pick(this.positions);
        this.faces.push(new faceController(this.scene, this.randomPositionImage, this.randomImage)
+       this.faces[faces.length-1].start();
     }
   }
 
