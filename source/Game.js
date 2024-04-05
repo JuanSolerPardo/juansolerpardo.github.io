@@ -23,7 +23,7 @@ export class Game extends Phaser.Scene
         this.scoreText = this.add.text(16, 16, 'Puntos: 0', { fontSize: '32px', fill: '#FFFF00' });
         this.scoreText.setScrollFactor(0);
         
-        this.positionImages = this.createPositionImages();
+    
         
         this.tiempoJuego = new CountDownController(this);
         this.tiempoJuego.start(this.handleCountDownFinished.bind(this));        
@@ -38,12 +38,8 @@ export class Game extends Phaser.Scene
         this.soundOpened.play();
        
     }
-
-  score = 0;
-  positionImages = [];
-  imagesToDisplay = ['img1', 'img2', 'img3', 'img4', 'img5'];  
-  scoreText ="";
-  countdownText="";
+ 
+ 
   soundOpened = null;
   soundCatched = null;
 
