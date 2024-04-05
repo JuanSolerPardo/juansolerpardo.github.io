@@ -1,3 +1,5 @@
+import import CountDownController from "./CountDownController.js"
+
 export default class cronometroJuego
 {
 
@@ -6,7 +8,7 @@ esfera
 /** @type {Phaser.Scene} */
 scene
 /** @param {Phaser.Graphics} */
-  graphics;
+reloj;
 /** @param {number} xPosition */
 xPosition
 
@@ -21,20 +23,26 @@ lineThick
 
 /** @param {number} lineColor */
 lineColor
-
+/** @type {CountDownController} */
+  cronometro
 /** 
 * @param {Phaser.Scene} scene 	
 */
-constructor(scene)
+constructor(scene, duracion = 45000)
 {		 
 	this.scene = scene	
-	this.graphics = this.scene.add.graphics();        
+	this.reloj = this.scene.add.graphics();  
+	this.sombraReloj = this.scene.add.graphics();  
 	this.xPosition = 540 
 	this.yPosition = 75
 	this.radius = 40
 	this.lineColor = 0x08D017
-	this.lineThick = 15	 
-	this.esfera = new Phaser.Curves.Ellipse(this.xPosition, this.yPosition, this.radius);
+	this.lineThick = 15	
+	
+	this.cronometro = new CountDownController(scene);
+       
+        this.cronometro.start(this.handleCountDownFinished.bind(this));
+
 
 }
 
@@ -44,24 +52,38 @@ constructor(scene)
 */
 start()
 {
-	this.stop()
+	this.stop();
+	this.cronometro(
+	this.sombraReloj.clear();
+	this.sombraReloj.lineStyle(this.lineThick, 0xD9EAD3, 1);	       
+        this.sombraReloj.arc(this.xPosition, this.yPosition, this.radius, Phaser.Math.DegToRad(0), Phaser.Math.DegToRad(360), false);
+	this.sombraReloj.strokePath();
+	
+	this.reloj.clear();
+	this.reloj.lineStyle(this.lineThick, this.lineColor, 1);	        
+        this.reloj.arc(this.xPosition, this.yPosition, this.radius, Phaser.Math.DegToRad(0), Phaser.Math.DegToRad(360), false);
+        this.reloj.strokePath();
 }
 
 stop()
 {
-
+  return;
 }
 
 update()
 {
-	this.graphics.clear();
+	this.cronometro.update();
+        const endArc = (360 * this.cronometro.percentRemain);
+	this.reloj.clear();
+	this.reloj.lineStyle(this.lineThick, this.lineColor, 1);	
+        this.reloj.beginPath();           
+        this.reloj.arc(this.xPosition, this.yPosition, this.radius, Phaser.Math.DegToRad(0), Phaser.Math.DegToRad(endArc), false);
+        this.reloj.strokePath();
 	
-	this.graphics.lineStyle(this.lineThick, this.lineColor, 1);
-	
-	
-            this.graphics.beginPath();           
-            this.graphics.arc(this.xPosition, this.yPosition, this.radius, Phaser.Math.DegToRad(0), Phaser.Math.DegToRad(270), false);
-            this.graphics.strokePath();
-	
+}
+
+handleCountDownFinished()
+{
+	this.stop()
 }
 }
