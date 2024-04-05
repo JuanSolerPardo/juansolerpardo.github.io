@@ -27,11 +27,11 @@ export class Game extends Phaser.Scene
         
         this.lbCronometro = this.add.text(700,50,'0',{fontSize: '55px'}).setOrigin(0.5);        
         
-       /* this.cronometro = new CountDownController(this);
-        this.cronometro.start(this.handleCountDownFinished.bind(this));*/
+        this.tiempoJuego = new CountDownController(this);
+        this.tiempoJuego.start(this.handleCountDownFinished.bind(this));
 
-        this.circulo = new cronometroJuego(this);
-        this.circulo.start(this.handleCountDownFinished.bind(this))
+        this.reloj = new cronometroJuego(this);
+        this.reloj.start(this.handleCountDownFinished.bind(this))
          
         
         this.greenCircleTimer = this.time.addEvent({
@@ -62,9 +62,9 @@ export class Game extends Phaser.Scene
     
    update(){
    
-      /*  this.cronometro.update();
-        this.lbCronometro.text = this.cronometro.secondsRemain;*/
-        this.circulo.update();
+        this.tiempoJuego.update();
+        this.lbCronometro.text = this.tiempoJuego.secondsRemain;
+        this.circulo.update(this.tiempoJuego.percentRemain);
    
    }
 
