@@ -11,7 +11,7 @@ export class Game extends Phaser.Scene
         super('Game');
         
         this.increaseScore = this.increaseScore.bind(this);
-        this.showNextImage = this.showNextImage.bind(this);
+        
        
     }
     
