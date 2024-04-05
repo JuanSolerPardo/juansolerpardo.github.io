@@ -1,4 +1,4 @@
-import import CountDownController from "./CountDownController.js"
+import CountDownController from "./CountDownController.js"
 
 export default class cronometroJuego
 {
