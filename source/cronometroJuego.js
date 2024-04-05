@@ -68,13 +68,13 @@ export default class cronometroJuego
 	update(percentRemain)
 	{
 		 
-	        const endArc = (360 * percentRemain);
+	        const endArc = (360 * percentRemain)-90;
 		 
 	        this.reloj.clear();
 		this.reloj.beginPath();
 		this.reloj.lineStyle(this.lineThick, this.lineColor, 1);	
 		this.reloj.setDepth(51)
-	        this.reloj.arc(this.xPosition, this.yPosition, this.radius, Phaser.Math.DegToRad(45), Phaser.Math.DegToRad(endArc), false);		 
+	        this.reloj.arc(this.xPosition, this.yPosition, this.radius, Phaser.Math.DegToRad(-90), Phaser.Math.DegToRad(endArc), false);		 
 	        this.reloj.strokePath();
 		
 	}
