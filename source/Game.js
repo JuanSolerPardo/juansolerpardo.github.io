@@ -1,5 +1,6 @@
 import CountDownController from "./CountDownController.js"
 import cronometroJuego from "./cronometroJuego.js"
+import faceController from "./faceController.js"
 export class Game extends Phaser.Scene
 {
     
