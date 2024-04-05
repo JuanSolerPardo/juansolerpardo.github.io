@@ -25,21 +25,12 @@ export class Game extends Phaser.Scene
         
         this.positionImages = this.createPositionImages();
         
-        this.lbCronometro = this.add.text(700,50,'0',{fontSize: '55px'}).setOrigin(0.5);        
-        
         this.tiempoJuego = new CountDownController(this);
         this.tiempoJuego.start(this.handleCountDownFinished.bind(this));
-
         this.reloj = new cronometroJuego(this);
-        this.reloj.start(this.handleCountDownFinished.bind(this))
+
          
-        
-        this.greenCircleTimer = this.time.addEvent({
-            delay: 1000,
-            callback: this.showNextImage,
-            callbackScope: this,
-            loop: true
-        });
+  
         
         this.soundOpened = this.sound.add('opened');
         this.soundCatched = this.sound.add('catched');
@@ -63,18 +54,11 @@ export class Game extends Phaser.Scene
    update(){
    
         this.tiempoJuego.update();
-        this.lbCronometro.text = this.tiempoJuego.secondsRemain;
         this.reloj.update(this.tiempoJuego.percentRemain);
    
    }
 
-  showNextImage() {
-      
-    this.randomImage = Phaser.Math.RND.pick(this.imagesToDisplay);
-    this.randomPositionImage = Phaser.Math.RND.pick(this.positionImages);
-    this.randomPositionImage.setTexture(this.randomImage);
-    this.randomPositionImage.setAlpha(1);
-  }
+
   createPositionImages() {
     this.images = [];
 
