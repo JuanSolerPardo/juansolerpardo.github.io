@@ -30,11 +30,13 @@ export class Preloader extends Phaser.Scene
     {        
         this.load.image('btnINICIO', './img/btnINICIO.png');
         this.load.image('congreso', './img/congreso.png');	
-        this.load.image('img1', './face/1.png');
-        this.load.image('img2', './face/2.png');
-        this.load.image('img3', './face/3.png');
-        this.load.image('img4', './face/4.png');
-        this.load.image('img5', './face/5.png');
+        this.load.image('img1', './face/0.webp');
+        this.load.image('img1', './face/1.webp');
+        this.load.image('img2', './face/2.webp');
+        this.load.image('img3', './face/3.webp');
+        this.load.image('img4', './face/4.webp');
+        this.load.image('img5', './face/5.webp');
+        this.load.image('img6', './face/6.webp');
         this.load.audio('opened', './sound/open.wav');
         this.load.audio('catched', './sound/catch.mp3');
     }
