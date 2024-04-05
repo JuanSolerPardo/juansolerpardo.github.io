@@ -35,10 +35,10 @@ export default class cronometroJuego
 		this.sombraReloj = this.scene.add.graphics();  
 		this.xPosition = 540 
 		this.yPosition = 50
-		this.radius = 40
+		this.radius = 30
 		this.lineColor = 0x08D017
 		this.lineColorSombra = 0xD9EAD3
-		this.lineThick = 15	
+		this.lineThick = 12	
 	}
 	
 	
