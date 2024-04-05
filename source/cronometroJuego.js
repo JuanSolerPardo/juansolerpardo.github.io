@@ -47,6 +47,7 @@ export default class cronometroJuego
 		
 		 
 		this.sombraReloj.clear();
+		this.reloj.beginPath();
 		this.sombraReloj.lineStyle(this.lineThick, this.lineColorSombra, 1);	       
 	        this.sombraReloj.arc(this.xPosition, this.yPosition, this.radius, Phaser.Math.DegToRad(0), Phaser.Math.DegToRad(360), false);
 		this.sombraReloj.setDepth(50)
