@@ -42,7 +42,7 @@ export default class faceController
 	
 	handleCountDownFinished()
 	{
-	   this.scene.destroy(this)
+	   this.scene.start('GameOver');
 	}
 
 	
