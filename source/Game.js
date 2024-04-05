@@ -82,7 +82,7 @@ export class Game extends Phaser.Scene
    }
     
 
-  showNextImage() {
+  function showNextImage() {
     
     this.numFaces = Phaser.Math.RND.between(1,2);
 
