@@ -49,15 +49,21 @@ export class Game extends Phaser.Scene
         this.scoreText = this.add.text(16, 16, 'Puntos: 0', { fontSize: '32px', fill: '#FFFF00' });
         this.scoreText.setScrollFactor(0);
         
-        this.tiempoJuego = new CountDownController(this);
-        this.tiempoJuego.start(this.handleCountDownFinished.bind(this));        
+        this.tiempoJuego = new CountDownController(this);      
         this.reloj = new cronometroJuego(this);
-        this.reloj.start();
+       
         
         this.soundOpened = this.sound.add('opened');
         this.soundCatched = this.sound.add('catched');
-        this.soundOpened.play();
+        this.soundOpened.play();      
        
+    }
+
+    start()
+    {
+        this.tiempoJuego.start(this.handleCountDownFinished.bind(this));
+        this.reloj.start();
+        shownextImage();
     }
     
     update(){
