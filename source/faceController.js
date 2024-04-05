@@ -1,7 +1,7 @@
 import CountDownController from "./CountDownController.js"
 
 export default class faceController  
-	
+{
 	 
 	/** @type {Phaser.Scene} */
 	scene
