@@ -36,10 +36,9 @@ export default class faceController
 	    this.crono.update();	 
 	}	
 	
-	handleCountDownFinished(element)
+	handleCountDownFinished()
 	{
-		element.destroy()
-	   
+	  this.destroy(true)	   
 	}
 
 	
