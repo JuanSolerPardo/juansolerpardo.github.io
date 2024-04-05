@@ -80,6 +80,7 @@ update()
 	this.reloj.lineStyle(this.lineThick, this.lineColor, 1);	
         this.reloj.beginPath();           
         this.reloj.arc(this.xPosition, this.yPosition, this.radius, Phaser.Math.DegToRad(0), Phaser.Math.DegToRad(endArc), false);
+	this.sombraReloj.setDepth(51);
         this.reloj.strokePath();
 	
 }
