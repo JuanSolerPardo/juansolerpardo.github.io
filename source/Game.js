@@ -30,8 +30,8 @@ export class Game extends Phaser.Scene
         this.cronometro = new CountDownController(this);
         this.cronometro.start(this.handleCountDownFinished.bind(this));
 
-        this.circulo = new cronometroJuego();
-        this.circulo.start(this);
+        this.circulo = new cronometroJuego(this);
+        this.circulo.start();
         
         this.greenCircleTimer = this.time.addEvent({
             delay: 1000,
