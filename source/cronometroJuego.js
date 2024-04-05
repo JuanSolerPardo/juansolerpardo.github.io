@@ -29,13 +29,11 @@ constructor(scene)
 {		 
 	this.scene = scene	
 	this.graphics = this.scene.add.graphics();        
-	this.xPosition = 400 
-	this.yPosition = 300
-	this.radius = 60
+	this.xPosition = 1000 
+	this.yPosition = 50
+	this.radius = 40
 	this.lineColor = 0x08D017
-	this.lineThick = 10
-	
-	//  With minimal arguments it creates a circle of radius 260 centered on 400x300:
+	this.lineThick = 20	 
 	this.esfera = new Phaser.Curves.Ellipse(this.xPosition, this.yPosition, this.radius);
 
 }
