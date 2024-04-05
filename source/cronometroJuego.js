@@ -48,13 +48,13 @@ export default class cronometroJuego
 		 
 		this.sombraReloj.clear();
 		this.sombraReloj.lineStyle(this.lineThick, this.lineColorSombra, 1);	       
-	        this.sombraReloj.arc(this.xPosition, this.yPosition, this.radius, Phaser.Math.DegToRad(0), Phaser.Math.DegToRad(360), false);
+	        this.sombraReloj.arc(this.xPosition, this.yPosition, this.radius, Phaser.Math.DegToRad(0), Phaser.Math.DegToRad(360), true);
 		this.sombraReloj.setDepth(50)
 		this.sombraReloj.strokePath();
 		
 		this.reloj.clear();
 		this.reloj.lineStyle(this.lineThick, this.lineColor, 1);	        
-	        this.reloj.arc(this.xPosition, this.yPosition, this.radius, Phaser.Math.DegToRad(0), Phaser.Math.DegToRad(360), false);
+	        this.reloj.arc(this.xPosition, this.yPosition, this.radius, Phaser.Math.DegToRad(0), Phaser.Math.DegToRad(360), true);
 		this.reloj.setDepth(51)
 	        this.reloj.strokePath();
 	}
@@ -68,11 +68,9 @@ export default class cronometroJuego
 	{
 		 
 	        const endArc = (360 * percentRemain);
-		this.reloj.clear();
-		this.reloj.lineStyle(this.lineThick, this.lineColor, 1);	
-	        this.reloj.setAngle(180);         
-	        this.reloj.arc(this.xPosition, this.yPosition, this.radius, Phaser.Math.DegToRad(0), Phaser.Math.DegToRad(endArc), false);
-		this.reloj.setDepth(51);
+		 
+	          
+	        this.reloj.arc(this.xPosition, this.yPosition, this.radius, Phaser.Math.DegToRad(0), Phaser.Math.DegToRad(endArc), true);		 
 	        this.reloj.strokePath();
 		
 	}
