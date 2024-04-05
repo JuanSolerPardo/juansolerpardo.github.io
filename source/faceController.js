@@ -1,7 +1,6 @@
 import CountDownController from "./CountDownController.js"
 
-export default class faceController  extends Phaser.Scene 
-{
+export default class faceController  
 	
 	 
 	/** @type {Phaser.Scene} */
@@ -50,7 +49,7 @@ export default class faceController  extends Phaser.Scene
 	
 	stop()
 	{	  	
-	  this.destroy(true);	  
+	  this.scene.destroy(this)  
 	}
 	
 	
