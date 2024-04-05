@@ -59,6 +59,6 @@ export default class faceController
 	   this.stop();
 	}
 
-	sumaalgo(){}
+	function sumaalgo(){}
 	
 }
