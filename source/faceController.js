@@ -36,9 +36,10 @@ export default class faceController
 	    this.crono.update();	 
 	}	
 	
-	handleCountDownFinished()
+	handleCountDownFinished(element)
 	{
-	   this.scene.start('GameOver');
+		element.destroy()
+	   
 	}
 
 	
