@@ -49,7 +49,7 @@ export default class faceController
 	
 	stop()
 	{	  	
-	  this.scene.destroy(this)  
+	  
 	}
 	
 	
