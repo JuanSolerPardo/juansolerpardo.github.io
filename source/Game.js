@@ -33,10 +33,10 @@ export class Game extends Phaser.Scene
         { x: 524, y: 695 },
         { x: 734, y: 695 }*/
         this.positions = [   
-         { x: 130, y: 135 },    
-        { x: 320, y: 135 },
-        { x: 515, y: 135 },
-        { x: 700, y: 135 }
+         { x: 130, y: 200 },    
+        { x: 320, y: 200 },
+        { x: 515, y: 200 },
+        { x: 700, y: 200 }
         // ... (agrega las demás posiciones aquí)
         ];   
         this.imagesToDisplay = ['img0', 'img1', 'img2', 'img3', 'img4', 'img5', 'img6'];
