@@ -59,7 +59,7 @@ export class Game extends Phaser.Scene
 
         this.tiempoJuego.start(this.handleCountDownFinished.bind(this));
         this.reloj.start();
-        showNextImage();
+        this.showNextImage();
        
     }
 
