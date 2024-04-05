@@ -29,11 +29,11 @@ constructor(scene)
 {		 
 	this.scene = scene	
 	this.graphics = this.scene.add.graphics();        
-	this.xPosition = 1000 
-	this.yPosition = 50
+	this.xPosition = 540 
+	this.yPosition = 75
 	this.radius = 40
 	this.lineColor = 0x08D017
-	this.lineThick = 20	 
+	this.lineThick = 15	 
 	this.esfera = new Phaser.Curves.Ellipse(this.xPosition, this.yPosition, this.radius);
 
 }
