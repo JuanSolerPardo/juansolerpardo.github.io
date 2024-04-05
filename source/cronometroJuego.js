@@ -74,7 +74,7 @@ export default class cronometroJuego
 		this.reloj.beginPath();
 		this.reloj.lineStyle(this.lineThick, this.lineColor, 1);	
 		this.reloj.setDepth(51)
-	        this.reloj.arc(this.xPosition, this.yPosition, this.radius, Phaser.Math.DegToRad(0), Phaser.Math.DegToRad(endArc), false);		 
+	        this.reloj.arc(this.xPosition, this.yPosition, this.radius, Phaser.Math.DegToRad(45), Phaser.Math.DegToRad(endArc), false);		 
 	        this.reloj.strokePath();
 		
 	}
