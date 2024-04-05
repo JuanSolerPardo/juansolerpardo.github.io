@@ -57,11 +57,13 @@ start(callback, duracion = 45000)
 	this.sombraReloj.clear();
 	this.sombraReloj.lineStyle(this.lineThick, 0xD9EAD3, 1);	       
         this.sombraReloj.arc(this.xPosition, this.yPosition, this.radius, Phaser.Math.DegToRad(0), Phaser.Math.DegToRad(360), false);
+	this.sombraReloj.setDepth(50)
 	this.sombraReloj.strokePath();
 	
 	this.reloj.clear();
 	this.reloj.lineStyle(this.lineThick, this.lineColor, 1);	        
         this.reloj.arc(this.xPosition, this.yPosition, this.radius, Phaser.Math.DegToRad(0), Phaser.Math.DegToRad(360), false);
+	this.sombraReloj.setDepth(51)
         this.reloj.strokePath();
 }
 
