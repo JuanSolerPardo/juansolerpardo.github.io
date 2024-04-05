@@ -64,7 +64,7 @@ export class Game extends Phaser.Scene
    
         this.tiempoJuego.update();
         this.lbCronometro.text = this.tiempoJuego.secondsRemain;
-        this.circulo.update(this.tiempoJuego.percentRemain);
+        this.reloj.update(this.tiempoJuego.percentRemain);
    
    }
 
@@ -107,15 +107,7 @@ export class Game extends Phaser.Scene
     return this.images;
   }
 
-  decreaseCountdown() {
-    //console.log('decreaseCountdown called');
 
-    this.countdown--;
-    this.countdownText.setText('Tiempo: ' + this.countdown);
-    if (this.countdown === 0) {
-      this.scene.start('GameOverScene', { puntuacion: this.score });
-    }
-  }
   increaseScore() {
    
     this.score += 1;
