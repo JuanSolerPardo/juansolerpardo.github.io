@@ -33,11 +33,7 @@ export default class faceController
 	
 	update()
 	{		 
-	    this.crono.update();
-	    if(this.crono.secondsRemain <= 0)
-	    {
-		this.stop()
-	    }
+	    this.crono.update();	 
 	}	
 	
 	handleCountDownFinished()
