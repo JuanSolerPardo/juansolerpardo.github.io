@@ -60,48 +60,10 @@ export class Game extends Phaser.Scene
    }
 
 
-  createPositionImages() {
-    this.images = [];
-
-    this.positions = [
-      { x: 100, y: 105 },
-      { x: 250, y: 104 },
-      { x: 400, y: 103 },
-      { x: 550, y: 103 },
-      { x: 700, y: 104 },
-      { x: 100, y: 310 },
-      { x: 250, y: 315 },
-      { x: 400, y: 321 },
-      { x: 550, y: 325 },
-      { x: 700, y: 327 },     
-      { x: 350, y: 500 },
-      { x: 500, y: 500 },
-      { x: 650, y: 500 }
-     
-      // ... (agrega las demás posiciones aquí)
-    ];
-
-    for (var i = 0; i < this.positions.length; i++) {
-      this.position = this.positions[i];
-      this.positionImage = this.add.image(this.position.x, this.position.y -10, '').setOrigin(0.5);       
-      this.positionImage.setInteractive();
-      this.positionImage.on('pointerdown', this.increaseScore);
-      this.images.push(this.positionImage);
-    }
-
-    return this.images;
-  }
 
 
-  increaseScore() {
-   
-    this.score += 1;
-    this.scoreText.setText('Score: ' + this.score);
-    this.soundCatched.play();
-    if (this.sound.context.state === 'suspended') {
-      this.sound.context.resume();
-    }
-  }
+
+ 
 
   
 
