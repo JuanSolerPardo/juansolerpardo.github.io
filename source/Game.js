@@ -1,4 +1,5 @@
 import CountDownController from "./CountDownController.js"
+import cronometroJuego from "./cronometroJuego.js"
 export class Game extends Phaser.Scene
 {
     
@@ -22,16 +23,15 @@ export class Game extends Phaser.Scene
         this.scoreText = this.add.text(16, 16, 'Puntos: 0', { fontSize: '32px', fill: '#FFFF00' });
         this.scoreText.setScrollFactor(0);
         
-        
-         
-        
         this.positionImages = this.createPositionImages();
         
-        this.lbCronometro = this.add.text(700,50,'0',{fontSize: '55px'}).setOrigin(0.5);
-        this.lbCronometro2 = this.add.text(700,50,'0',{fontSize: '55px'}).setOrigin(0.9);
+        this.lbCronometro = this.add.text(700,50,'0',{fontSize: '55px'}).setOrigin(0.5);        
         
         this.cronometro = new CountDownController(this);
         this.cronometro.start(this.handleCountDownFinished.bind(this));
+
+        this.circulo = new cronometroJuego();
+        this.circulo.start();
         
         this.greenCircleTimer = this.time.addEvent({
             delay: 1000,
@@ -58,11 +58,12 @@ export class Game extends Phaser.Scene
    {
      this.scene.start('GameOver');
    }
+    
    update(){
    
         this.cronometro.update();
         this.lbCronometro.text = this.cronometro.secondsRemain;
-        this.lbCronometro2.text = this.cronometro.percentRemain;
+        this.circulo.update();
    
    }
 
