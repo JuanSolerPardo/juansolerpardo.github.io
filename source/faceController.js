@@ -1,3 +1,5 @@
+import CountDownController from "./CountDownController.js"
+
 export default class faceController
 {
 	
@@ -17,14 +19,14 @@ export default class faceController
 	/** 
 	* @param {Phaser.Scene} scene 	
 	*/
-	constructor(scene)
+	constructor(scene,xPosition, yPosition)
 	{		 
 		this.scene = scene	
-		this.crono = new   CountDownController();
-		this.crono.start(this.handleCountDownFinished.bind(this));   
-	        
-		this.xPosition = 540 
-		this.yPosition = 75
+		this.crono = new CountDownController(scene);
+		this.crono.start(this.handleCountDownFinished.bind(this));  	        
+		this.xPosition = xPosition
+		this.yPosition = yPosition
+		
 	
 	}
 	
@@ -37,6 +39,7 @@ export default class faceController
 	
 	stop()
 	{
+	  this.destroy();
 	  return;
 	}
 	
@@ -44,6 +47,9 @@ export default class faceController
 	{		 
 		
 	}
-	
+	handleCountDownFinished()
+	{
+		this.stop();
+	}
 	
 }
