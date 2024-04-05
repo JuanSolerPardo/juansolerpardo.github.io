@@ -55,15 +55,17 @@ export class Game extends Phaser.Scene
         
         this.soundOpened = this.sound.add('opened');
         this.soundCatched = this.sound.add('catched');
-        this.soundOpened.play();      
+        this.soundOpened.play();    
+
+        this.tiempoJuego.start(this.handleCountDownFinished.bind(this));
+        this.reloj.start();
+        shownextImage();
        
     }
 
     start()
     {
-        this.tiempoJuego.start(this.handleCountDownFinished.bind(this));
-        this.reloj.start();
-        shownextImage();
+        
     }
     
     update(){
