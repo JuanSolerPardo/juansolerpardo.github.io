@@ -39,7 +39,7 @@ constructor(scene)
 	this.lineColor = 0x08D017
 	this.lineThick = 15	
 	
-	this.cronometro = new CountDownController(this);
+	this.cronometro = new CountDownController(scene);
        
       
 
