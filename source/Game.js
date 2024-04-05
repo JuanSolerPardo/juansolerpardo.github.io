@@ -11,7 +11,7 @@ export class Game extends Phaser.Scene
      /** @type {array} */
     faces
     
-    constructor ()
+    constructor()
     {
         super('Game');   
         this.faces=[];
@@ -59,7 +59,7 @@ export class Game extends Phaser.Scene
 
         this.tiempoJuego.start(this.handleCountDownFinished.bind(this));
         this.reloj.start();
-        shownextImage();
+        showNextImage();
        
     }
 
@@ -82,7 +82,7 @@ export class Game extends Phaser.Scene
    }
     
 
-  function showNextImage() {
+  showNextImage() {
     
     this.numFaces = Phaser.Math.RND.between(1,2);
 
