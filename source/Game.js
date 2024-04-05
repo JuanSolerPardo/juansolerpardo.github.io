@@ -63,9 +63,7 @@ export class Game extends Phaser.Scene
    
         this.tiempoJuego.update();
         this.reloj.update(this.tiempoJuego.percentRemain);
-        this.faces.forEach(function (face) {
-      face.update();
-    });
+        this.faces.forEach(function (face) {face.update();});
    
    }
    
@@ -83,7 +81,7 @@ export class Game extends Phaser.Scene
        this.randomImage = Phaser.Math.RND.pick(this.imagesToDisplay);
        this.randomPositionImage = Phaser.Math.RND.pick(this.positions);
        this.faces.push(new faceController(this.scene, this.randomPositionImage, this.randomImage))
-       this.faces[faces.length-1].start();
+       this.faces[this.faces.length-1].start();
     }
   }
 
