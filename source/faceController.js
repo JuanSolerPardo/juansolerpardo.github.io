@@ -15,7 +15,7 @@ export default class faceController  extends Phaser.GameObjects.GameObject
 	* @param {Phaser.Scene} scene 	
 	*/
 	constructor(scene, position, face)
-	{		 
+	{       super('FaceController')
 		this.scene = scene	
 		this.crono = new CountDownController(scene);		  	        
 		this.position = position		
