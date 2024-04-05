@@ -29,7 +29,7 @@ export class Game extends Phaser.Scene
         { x: 524, y: 695 },
         { x: 734, y: 695 }*/
         this.positions = [   
-         { x: 125, y: 335 },    
+         { x: 130, y: 335 },    
         { x: 320, y: 335 },
         { x: 515, y: 335 },
         { x: 700, y: 335 }
