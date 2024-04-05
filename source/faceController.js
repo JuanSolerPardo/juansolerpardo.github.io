@@ -32,8 +32,8 @@ export default class faceController
 	
 	start()
 	{	
-		this.crono.start(this.handleCountDownFinished.bind(this),Phaser.Math.RND.between(500,1500)); 
-		this.position.setTexture(this.face); 
+		this.crono.start(this.handleCountDownFinished.bind(this),Phaser.Math.RND.between(500,1500)); 			  
+		this.position = this.add.image(this.position.x, this.position.y -10, this.face).setOrigin(0.5);
 	}
 	
 	update()
