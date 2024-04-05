@@ -26,8 +26,9 @@ export class Game extends Phaser.Scene
         this.positionImages = this.createPositionImages();
         
         this.tiempoJuego = new CountDownController(this);
-        this.tiempoJuego.start(this.handleCountDownFinished.bind(this));
+        this.tiempoJuego.start(this.handleCountDownFinished.bind(this));        
         this.reloj = new cronometroJuego(this);
+        this.reloj.start();
 
          
   
