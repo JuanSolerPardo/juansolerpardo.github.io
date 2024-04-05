@@ -20,10 +20,11 @@ export class Game extends Phaser.Scene
 
     preload()
     {
-        this.positions = [        
-        { x: 316, y: 805 },
-        { x: 524, y: 805 },
-        { x: 734, y: 805 }
+        this.positions = [   
+        { x: 108, y: 705 },    
+        { x: 316, y: 705 },
+        { x: 524, y: 7805 },
+        { x: 734, y: 705 }
         // ... (agrega las demás posiciones aquí)
         ];   
         this.imagesToDisplay = ['img0', 'img1', 'img2', 'img3', 'img4', 'img5', 'img6'];
