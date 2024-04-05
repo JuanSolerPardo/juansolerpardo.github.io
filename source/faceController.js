@@ -1,7 +1,6 @@
 import CountDownController from "./CountDownController.js"
 
-export class faceController  extends Phaser.GameObjects.GameObject
-
+export default class faceController extends Phaser.GameObjects.GameObject
 {
 	 
 	/** @type {Phaser.Scene} */
