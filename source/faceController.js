@@ -7,13 +7,8 @@ export default class faceController
 	scene
 		
 	/** @type {CountDownController}*/
-        crono
-		
-	/** @param {number} xPosition */
-	xPosition
+        crono	
 	
-	/** @param {number} yPosition */
-	yPosition
 	
 	/** 
 	* @param {Phaser.Scene} scene 	
@@ -24,8 +19,6 @@ export default class faceController
 		this.crono = new CountDownController(scene);		  	        
 		this.position = position		
 		this.face = face
-    		
-	
 	}
 	
 	
@@ -45,19 +38,13 @@ export default class faceController
 	    {
 		this.stop()
 	    }
-	}
-	
-	stop()
-	{	  	
-	  
-	}
-	
+	}	
 	
 	handleCountDownFinished()
 	{
-	   this.stop();
+	   this.scene.destroy(this)
 	}
 
-	sumaalgo(){return 1;}
+	
 	
 }
