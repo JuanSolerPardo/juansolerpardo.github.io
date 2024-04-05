@@ -32,8 +32,8 @@ export default class faceController
 	start()
 	{	
 		this.crono.start(this.handleCountDownFinished.bind(this),Phaser.Math.RND.between(850,1500)); 			  
-		this.position = this.scene.add.image(this.position.x, this.position.y -10, this.face).setOrigin(0.5);
-		this.position.setDisplaySize(30, 30);
+		this.position = this.scene.add.image(this.position.x, this.position.y, this.face).setOrigin(0.5);
+		this.position.setDisplaySize(200,100);
       		this.position.setInteractive();
       		//this.position.on('pointerdown', this.sumaalgo());
 	}
