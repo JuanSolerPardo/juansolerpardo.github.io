@@ -6,7 +6,7 @@ export default class faceController
 	scene
 		
 	/** @type {Phaser.EventTime}*/
-  crono
+        crono
 		
 	/** @param {number} xPosition */
 	xPosition
@@ -20,7 +20,9 @@ export default class faceController
 	constructor(scene)
 	{		 
 		this.scene = scene	
-	  this.crono = new   
+		this.crono = new   CountDownController();
+		this.crono.start(this.handleCountDownFinished.bind(this));   
+	        
 		this.xPosition = 540 
 		this.yPosition = 75
 	
