@@ -21,7 +21,7 @@ export class Game extends Phaser.Scene
     preload()
     {
         this.positions = [   
-         { x: 235, y: 180 },    
+        { x: 235, y: 180 },    
         { x: 425, y: 180 },
         { x: 605, y: 180 },
         { x: 790, y: 180 },        
@@ -60,6 +60,8 @@ export class Game extends Phaser.Scene
 
         this.tiempoJuego.start(this.handleCountDownFinished.bind(this));
         this.reloj.start();
+
+        
         this.showNextImage();
        
     }
@@ -74,6 +76,10 @@ export class Game extends Phaser.Scene
         this.tiempoJuego.update();
         this.reloj.update(this.tiempoJuego.percentRemain);
         this.faces.forEach(function (face) {face.update();});
+        if(this.faces.Count <= 1)
+        {
+            this.showNextImage
+        }
    
    }
    
