@@ -15,6 +15,7 @@ export class Game extends Phaser.Scene
     constructor()
     {
         super('Game');   
+        this.faces=[];
          
     }
 
@@ -61,8 +62,7 @@ export class Game extends Phaser.Scene
         this.tiempoJuego.start(this.handleCountDownFinished.bind(this));
         this.reloj.start();
 
-        this.objList = new Phaser.GameObjects.DisplayList(this);      
- 
+         
        
     }
 
@@ -72,16 +72,14 @@ export class Game extends Phaser.Scene
    
         this.tiempoJuego.update();
         this.reloj.update(this.tiempoJuego.percentRemain);
-        
-        this.objList.getChildren();
    }
    
     handleCountDownFinished()
    {
      this.scene.start('GameOver');
-   }
-    
+   }    
 
+    
   showNextImage() {
     
     var numFaces = Phaser.Math.RND.between(1,2);
@@ -89,7 +87,7 @@ export class Game extends Phaser.Scene
     for (var i = 0; i < this.numFaces; i++) {
        this.randomImage = Phaser.Math.RND.pick(this.imagesToDisplay);
        this.randomPositionImage = Phaser.Math.RND.pick(this.positions);
-       new faceController(this, this.randomPositionImage, this.randomImage)        
+       this.faces.push(new faceController(this, this.randomPositionImage, this.randomImage));       
     }
       
   }
