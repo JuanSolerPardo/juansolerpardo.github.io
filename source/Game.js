@@ -82,7 +82,7 @@ export class Game extends Phaser.Scene
     
   showNextImage() {
     
-    var numFaces = Phaser.Math.RND.between(1,2);
+    this.numFaces = Phaser.Math.RND.between(1,2);
 
     for (var i = 0; i < this.numFaces; i++) {
        this.randomImage = Phaser.Math.RND.pick(this.imagesToDisplay);
