@@ -53,27 +53,19 @@ export class Game extends Phaser.Scene
         
         this.tiempoJuego = new CountDownController(this);      
         this.reloj = new cronometroJuego(this);
-       
-        
+               
         this.soundOpened = this.sound.add('opened');
         this.soundCatched = this.sound.add('catched');
         this.soundOpened.play();    
 
         this.tiempoJuego.start(this.handleCountDownFinished.bind(this));
         this.reloj.start();
-        this.showNextImage()
-         
-       
-    }
-
- 
+    } 
     
     update(){
-   
         this.tiempoJuego.update();
         this.reloj.update(this.tiempoJuego.percentRemain);
-        if(this.faces.length =< 1)
-        {this.showNextImage()}
+        if(this.faces.length =< 1){this.showNextImage()}
    }
    
     handleCountDownFinished()
@@ -91,6 +83,7 @@ export class Game extends Phaser.Scene
        this.randomPositionImage = Phaser.Math.RND.pick(this.positions);
        this.faces.push(new faceController(this, this.randomPositionImage, this.randomImage));  
        this.faces[this.faces.length-1].start();
+        
     }
       
   } 
