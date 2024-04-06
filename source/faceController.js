@@ -25,10 +25,10 @@ export default class faceController
 	start()
 	{	
 		this.crono.start(this.handleCountDownFinished.bind(this),Phaser.Math.RND.between(8500,15000)); 			  
-		this.position = this.scene.add.image(this.position.x, this.position.y, this.face).setOrigin(0.5);
-		this.position.setDisplaySize(160,200);
-		this.position.setInteractive();
-		this.position.on('pointerdown', () => this.showCoins();this.position.destroy());
+		this.face = this.scene.add.image(this.position.x, this.position.y, this.face).setOrigin(0.5);
+		this.face.setDisplaySize(160,200);
+		this.face.setInteractive();
+		this.face.on('pointerdown', () => this.showCoins();this.position.destroy());
 	}
 	
 	update()
@@ -38,7 +38,7 @@ export default class faceController
 	
 	handleCountDownFinished()
 	{
-	  this.position.destroy();	   
+	  this.face.destroy();	   
 	}
 
 	showCoins()
