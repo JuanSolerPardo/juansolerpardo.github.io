@@ -1,6 +1,6 @@
 export default class CountdownController extends Phaser.Scene
 {
-	/** @type {Phaser.Scene} */
+	/** @type {Phaser.Scene} **/
 	scene
         
 	/** @type {Phaser.number} */
