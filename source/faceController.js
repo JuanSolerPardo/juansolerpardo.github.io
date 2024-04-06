@@ -27,8 +27,8 @@ export default class faceController
 		this.crono.start(this.handleCountDownFinished.bind(this),Phaser.Math.RND.between(850,1500)); 			  
 		this.position = this.scene.add.image(this.position.x, this.position.y, this.face).setOrigin(0.5);
 		this.position.setDisplaySize(160,200);
-      		this.position.setInteractive();
-      		//this.position.on('pointerdown', this.sumaalgo());
+      	this.position.setInteractive();
+      	this.position.on('pointerdown', this.showCoins());
 	}
 	
 	update()
@@ -41,6 +41,10 @@ export default class faceController
 	  this.position.destroy();	   
 	}
 
+	showCoins()
+	{
+	  this.crono.secondsRemain +=100;
+	}
 	
 	
 }
