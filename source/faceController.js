@@ -19,6 +19,7 @@ export default class faceController
 		this.crono = new CountDownController(scene);		  	        
 		this.position = position		
 		this.face = face
+		this.status = 0;
 	}
 	
 	
@@ -29,6 +30,7 @@ export default class faceController
 		this.face.setDisplaySize(160,200);
 		this.face.setInteractive();
 		this.face.on('pointerdown', () => this.faceClicked());
+		this.status = 1;
 	}
 	
 	update()
@@ -38,19 +40,30 @@ export default class faceController
 	
 	handleCountDownFinished()
 	{
-	  this.face.destroy();	   
+	  this.face.destroy();	 
+	  this.status = 0;
 	}
 
 	faceClicked()
-	{
-	  this.crono.destroy();
+	{	  
 	  this.showCoins();
-	  this.face.destroy();		
+	  this.face.destroy();	
+	  this.status = 0;
 	}
 	
 	showCoins()
 	{
 	  //código para mostrar las monedas
+	}
+
+	setStatus(_status)
+	{
+	   this.status = _status;
+	}
+	
+	getStatus()
+	{
+	   return this.status;
 	}
 	
 	
