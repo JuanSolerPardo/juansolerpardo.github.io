@@ -1,4 +1,4 @@
-export default class CountdownController extends Phaser.Scene
+export default class CountdownController  
 {
 	/** @type {Phaser.Scene} **/
 	scene
@@ -17,11 +17,10 @@ export default class CountdownController extends Phaser.Scene
 	 * @param {Phaser.Scene} scene 	
 	 */
 	constructor(scene)
-	{		
-		super('CountDownController'); 
-		this.scene = scene	
-		this.secondsRemain = 0
-		this.percentRemain = 0
+	{				 
+		this.scene = scene;	
+		this.secondsRemain = 0;
+		this.percentRemain = 0;
 	}
 
 	/**
