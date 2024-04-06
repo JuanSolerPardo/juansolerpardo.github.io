@@ -1,4 +1,4 @@
-export default class CountdownController extends Phase.scene
+export default class CountdownController extends Phase.Scene
 {
 	/** @type {Phaser.Scene} */
 	scene
