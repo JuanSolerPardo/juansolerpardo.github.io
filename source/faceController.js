@@ -28,7 +28,7 @@ export default class faceController
 		this.face = this.scene.add.image(this.position.x, this.position.y, this.face).setOrigin(0.5);
 		this.face.setDisplaySize(160,200);
 		this.face.setInteractive();
-		this.face.on('pointerdown', () => this.showCoins();this.position.destroy());
+		this.face.on('pointerdown', () => this.faceClicked());
 	}
 	
 	update()
@@ -41,9 +41,16 @@ export default class faceController
 	  this.face.destroy();	   
 	}
 
+	faceClicked()
+	{
+	  this.crono.destroy();
+	  this.showCoins();
+	  this.face.destroy();		
+	}
+	
 	showCoins()
 	{
-	  this.crono.secondsRemain +=100;
+	  //código para mostrar las monedas
 	}
 	
 	
