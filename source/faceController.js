@@ -28,7 +28,7 @@ export default class faceController
 		this.position = this.scene.add.image(this.position.x, this.position.y, this.face).setOrigin(0.5);
 		this.position.setDisplaySize(160,200);
 		this.position.setInteractive();
-		this.position.on('pointerdown', () => this.position.setDisplaySize(320,400);));
+		this.position.on('pointerdown', () => this.position.setDisplaySize(320,400));
 	}
 	
 	update()
