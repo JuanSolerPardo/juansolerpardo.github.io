@@ -65,7 +65,7 @@ export class Game extends Phaser.Scene
     update(){
 
         this.faces = this.faces.filter(function (face) {
-            return face.getStatus == 1;
+            return face.getStatus() == 1;
         });        
         this.tiempoJuego.update();
         this.reloj.update(this.tiempoJuego.percentRemain);
