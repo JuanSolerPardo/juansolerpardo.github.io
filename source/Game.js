@@ -72,6 +72,8 @@ export class Game extends Phaser.Scene
    
         this.tiempoJuego.update();
         this.reloj.update(this.tiempoJuego.percentRemain);
+        if(this.faces.length =< 1)
+        {this.showNextImage()}
    }
    
     handleCountDownFinished()
