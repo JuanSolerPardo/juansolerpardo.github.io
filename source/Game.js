@@ -74,9 +74,6 @@ export class Game extends Phaser.Scene
         this.reloj.update(this.tiempoJuego.percentRemain);
         
         this.objList.getChildren();
-        );
-        
-   
    }
    
     handleCountDownFinished()
