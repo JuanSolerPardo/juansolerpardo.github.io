@@ -25,7 +25,7 @@ export default class faceController
 	
 	start()
 	{	
-		this.crono.start(this.handleCountDownFinished.bind(this),Phaser.Math.RND.between(500,1000)); 			  
+		this.crono.start(this.handleCountDownFinished.bind(this),Phaser.Math.RND.between(850,1200)); 			  
 		this.face = this.scene.add.image(this.position.x, this.position.y, this.face).setOrigin(0.5);
 		this.face.setDisplaySize(160,200);
 		this.face.setInteractive();
