@@ -46,7 +46,7 @@ export class Game extends Phaser.Scene
     create ()
     {
         this.add.image(512, 385, 'congreso');
-        
+        this.faces = [];
         this.score = 0;
         this.scoreText = this.add.text(16, 16, 'Puntos: 0', { fontSize: '32px', fill: '#FFFF00' });
         this.scoreText.setScrollFactor(0);
